@@ -1,0 +1,64 @@
+.container {
+    height: 100vh;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #faedcd;
+    
+
+    & h2 {
+        padding: 20px;
+        font-family: 'Barlow Condensed', sans-serif;
+        color: #D4A373;
+    }
+
+    & .form {
+        border: solid #A5A58D 3px;
+        border-radius: 5px;
+        padding: 10px;     
+    }
+
+    & .name,
+      .city,
+      .title,
+      .score,
+      .comment {        
+        padding: 10px;
+    }
+
+    input {
+        margin-left: 5px;
+
+    }
+
+    
+
+
+}
+
+button {
+    border: none;
+    color: #090909;
+    margin-top: 10px;
+    padding: 0.7em 1.7em;
+    font-size: 14px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+   }
+   
+   button:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5,
+                inset -4px -4px 12px #ffffff;
+   }
+
+.text-error {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: red;
+}

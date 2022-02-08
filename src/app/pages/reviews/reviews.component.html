@@ -1,0 +1,93 @@
+<div class="container">
+  <h2>Formulario de Reseña</h2>
+
+  <div class="form">
+    <form novalidate [formGroup]="reviewForm">
+      <div class="name">
+        <label for="name">Tu nombre</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          formControlName="name"
+          placeholder="Nombre"
+        />
+        <div class="text-error"
+          *ngIf="
+            !reviewForm.get('name')?.valid && reviewForm.get('name')?.dirty || submitted
+          "
+        >
+          Necesitas introducir un nombre
+        </div>
+      </div>
+      <div class="city">
+        <label for="city">Tu ciudad</label>
+        <input
+          type="text"
+          name="city"
+          id="city"
+          formControlName="city"
+          placeholder="Ciudad"
+        />
+        <div class="text-error"
+          *ngIf="
+            !reviewForm.get('city')?.valid && reviewForm.get('city')?.dirty || submitted
+          "
+        >
+          Necesitas introducir una ciudad
+        </div>
+      </div>
+      <div class="title">
+        <label for="title">Título</label>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          formControlName="title"
+          placeholder="Título de la película"
+        />
+        <div class="text-error"
+          *ngIf="
+            !reviewForm.get('title')?.valid && reviewForm.get('title')?.dirty || submitted
+          "
+        >
+          Necesitas introducir un nombre
+        </div>
+      </div>
+      <div class="score" >
+        <label for="score">Puntuación</label>
+        <input
+          type="text"
+          name="score"
+          id="score"
+          formControlName="score"
+          step="any"
+          placeholder="Puntuación"
+        />
+        <div class="text-error"
+          *ngIf="
+            !reviewForm.get('score')?.valid && reviewForm.get('score')?.dirty || submitted
+          "
+        >
+          Necesitas introducir un nombre
+        </div>
+      </div>
+      <div class="comment">
+        <label for="comment">Comentario</label>
+        <input
+          type="text"
+          name="comment"
+          id="comment"
+          formControlName="comment"
+          placeholder="Comentario"
+        />
+      </div>
+    </form>
+  </div>
+  <button type="submit">Enviar</button>
+  <p class="text-error" *ngIf="reviewForm.invalid && submitted">Hay errores en tu formulario</p>
+
+
+</div>
+
+<router-outlet></router-outlet>

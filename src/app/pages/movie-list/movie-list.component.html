@@ -1,0 +1,12 @@
+<div class="container">
+  <ul class="list">
+    <li class="list-item shadow-drop-center" *ngFor="let item of movieList">
+      <img class="list-item__img" [src]="item.image" />
+      <div class="inner-container">
+      <p>{{ item.title }}</p>
+      <!-- <button [routerLink] ="['/movie-list/movie-detail']">More</button> -->
+      <button (click)="viewDetail(item)" >More</button>
+    </div>
+    </li>
+  </ul>
+</div>
