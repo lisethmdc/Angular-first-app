@@ -1,6 +1,6 @@
-import { DetailInterface } from './../../models/detail.model';
 import { Component, OnInit } from '@angular/core';
 import { MovieInterface } from 'src/app/models/movie.model';
+import { DetailInterface } from './../../models/detail.model';
 import { MovieListService } from './movie-list.service';
 
 @Component({
@@ -10,30 +10,37 @@ import { MovieListService } from './movie-list.service';
 })
 export class MovieListComponent implements OnInit {
   public movieList: MovieInterface[];
-  public movieDetail: DetailInterface;
+  public movie: DetailInterface;
 
   constructor(private movieListService: MovieListService) { }
 
   ngOnInit(): void {
-    this.getMovieList()
+    this.getMovieList();
+    
   }
 
   getMovieList(): void {
     this.movieListService.getMovies().subscribe((res: MovieInterface[])=> {
       this.movieList = res;
-    })
-  }
-
-  getMovieDetail(url: string): void{
-    this.movieListService.getMovieDetail(url).subscribe((res: DetailInterface)=> {
       console.log(res)
-      this.movieDetail = res;
     })
   }
+/* 
+   getMovieDetail(): void {
+    this.movieListService.getDetail().subscribe((res: any) => {
+      //item.url = res.url;
+      this.movie = res
+      console.log(res)
+    });
+  }  */
 
-  public viewDetail(item: MovieInterface): void {
-    this.getMovieDetail(item.url)
-  } 
- 
+/*
+   public viewDetail(item: MovieInterface): void {
+    this.getMovieDetail(item, item.url);
+    console.log(this.viewDetail)
+  }  */
+
+
+  
 
 }

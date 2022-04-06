@@ -1,8 +1,7 @@
-import { DetailInterface } from './../../models/detail.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-//
+import { DetailInterface } from 'src/app/models/detail.model';
 
 import { MovieInterface } from 'src/app/models/movie.model';
 
@@ -21,8 +20,10 @@ export class MovieListService {
     return this.http.get<MovieInterface[]> (`${this.baseUrl}`)
   }
 
-  getMovieDetail(url:string): Observable<DetailInterface> {
-    return this.http.get<DetailInterface> (url)
-  }
 
+
+/*   getDetail(): Observable<DetailInterface> {
+    return this.http.get<DetailInterface>(`${this.baseUrl}/ebbb6b7c-945c-41ee-a792-de0e43191bd8`);
+  }
+ */
 }

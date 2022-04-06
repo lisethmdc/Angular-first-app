@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 import { MovieListRoutingModule } from './movie-list-routing.module';
 import { MovieListComponent } from './movie-list.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+
 import { MovieListService } from './movie-list.service';
+import { MovieDetailService } from './movie-detail/movie-detail.service';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { MovieListService } from './movie-list.service';
     MovieListRoutingModule
   ],
   providers: [
-    MovieListService
+    MovieListService,
+    MovieDetailService
   ]
 })
 export class MovieListModule { }

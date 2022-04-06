@@ -4,8 +4,8 @@
       <img class="list-item__img" [src]="item.image" />
       <div class="inner-container">
       <p>{{ item.title }}</p>
-      <!-- <button [routerLink] ="['/movie-list/movie-detail']">More</button> -->
-      <button (click)="viewDetail(item)" >More</button>
+      <button [routerLink] ="['/catalog', item.id]">More</button>
+      <!-- <button (click)="viewDetail(item)">More</button> -->
     </div>
     </li>
   </ul>
