@@ -8,8 +8,12 @@
     justify-content: space-evenly;
 }
 
+img {
+    width: 400px;
+}
 
-/* From cssbuttons.io by @alexmaracinaru */
+
+
 .cta {
     position: relative;
     margin: auto;
@@ -34,7 +38,6 @@
    
    .cta span {
     position: relative;
-    font-family: 'Barlow Condensed', sans-serif;
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.05em;
