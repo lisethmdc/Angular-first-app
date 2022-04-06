@@ -6,11 +6,11 @@
     justify-content: flex-start;
     align-items: center;
     background-color: #faedcd;
+    font-family: 'Barlow Condensed', sans-serif;
     
 
     & h2 {
         padding: 20px;
-        font-family: 'Barlow Condensed', sans-serif;
         color: #D4A373;
     }
 
@@ -24,17 +24,21 @@
       .city,
       .title,
       .score,
-      .comment {        
+      .comment {   
+          display: flex;     
+          justify-content: space-between;
         padding: 10px;
     }
 
-    input {
+    input,
+    select, 
+    textarea {
         margin-left: 5px;
-
     }
 
-    
-
+    & .text-error {
+        color: red;
+    }
 
 }
 
@@ -42,14 +46,15 @@ button {
     border: none;
     color: #090909;
     margin-top: 10px;
+    margin-left: 90px;
     padding: 0.7em 1.7em;
     font-size: 14px;
     border-radius: 0.5em;
     background: #e8e8e8;
     border: 1px solid #e8e8e8;
     transition: all .3s;
-    box-shadow: 6px 6px 12px #c5c5c5,
-                -6px -6px 12px #ffffff;
+    box-shadow: 4px 4px 8px #c5c5c5,
+                -4px -4px 8px #ffffff;
    }
    
    button:active {
@@ -58,7 +63,3 @@ button {
                 inset -4px -4px 12px #ffffff;
    }
 
-.text-error {
-    font-family: 'Barlow Condensed', sans-serif;
-    color: red;
-}

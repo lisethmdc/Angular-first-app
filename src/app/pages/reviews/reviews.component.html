@@ -1,10 +1,10 @@
 <div class="container">
-  <h2>Formulario de Reseña</h2>
+  <h2>Send a review</h2>
 
   <div class="form">
-    <form novalidate [formGroup]="reviewForm">
+    <form novalidate (ngSubmit)="onSubmit()" [formGroup]="reviewForm">
       <div class="name">
-        <label for="name">Tu nombre</label>
+        <label for="name">Your name</label>
         <input
           type="text"
           name="name"
@@ -14,78 +14,92 @@
         />
         <div class="text-error"
           *ngIf="
-            !reviewForm.get('name')?.valid && reviewForm.get('name')?.dirty || submitted
-          "
-        >
-          Necesitas introducir un nombre
+            !reviewForm.get('name')?.valid && 
+            (reviewForm.get('name')?.dirty || submitted)">
+          <p>Need introduce your name</p>
         </div>
       </div>
+
       <div class="city">
-        <label for="city">Tu ciudad</label>
+        <label for="city">Your city</label>
         <input
           type="text"
           name="city"
           id="city"
           formControlName="city"
-          placeholder="Ciudad"
+          placeholder="City"
         />
         <div class="text-error"
           *ngIf="
-            !reviewForm.get('city')?.valid && reviewForm.get('city')?.dirty || submitted
-          "
-        >
-          Necesitas introducir una ciudad
+            !reviewForm.get('city')?.valid &&
+            (reviewForm.get('city')?.dirty || submitted)">
+          <p>Need introduce your city</p>
         </div>
       </div>
+
       <div class="title">
-        <label for="title">Título</label>
-        <input
-          type="text"
-          name="title"
-          id="title"
-          formControlName="title"
-          placeholder="Título de la película"
-        />
+        <label for="title">Title</label>
+        <select placeholder="Choose a movie" name="title" id="title" formControlName = "title">
+          <!-- <option disabled hidden selected>Subject line</option> -->
+          <option>Castle in the Sky</option>
+          <option>Grave of the Fireflies</option>
+          <option>My Neighbor Totoro</option>  
+          <option>Kiki's Delivery Service</option>
+          <option>Only Yesterday</option>
+          <option>Porco Rosso</option>
+          <option>Pom Poko</option>
+          <option>Whisper of the Heart</option>
+          <option>Princess Mononoke</option>
+          <option>My Neighbors the Yamadas</option>
+          <option>Spirited Away</option>
+          <option>The Cat Returns</option>
+          <option>Howl's Moving Castle</option>
+          <option>Tales from Earthsea</option>
+          <option>Ponyo</option>
+          <option>Arrietty</option>
+          <option>From Up on Poppy Hill</option>
+          <option>The Wind Rises</option>
+          <option>The Tale of the Princess Kaguya</option>
+          <option>When Marnie Was There</option>
+          <option>The Red Turtle</option>
+          <option>Earwig and the Witch</option>
+          <option>Grave of the Fireflies</option>
+          <option>My Neighbor Totoro</option>
+        </select>
         <div class="text-error"
           *ngIf="
-            !reviewForm.get('title')?.valid && reviewForm.get('title')?.dirty || submitted
-          "
-        >
-          Necesitas introducir un nombre
-        </div>
+            !reviewForm.get('title')?.valid && 
+            reviewForm.get('title')?.dirty || submitted">
+          <p>Need choose a movie</p>
+        </div> 
       </div>
+
       <div class="score" >
-        <label for="score">Puntuación</label>
+        <label for="score">Score</label>
         <input
-          type="text"
+          type="number"
           name="score"
           id="score"
           formControlName="score"
-          step="any"
-          placeholder="Puntuación"
+          placeholder="Your score"
         />
         <div class="text-error"
           *ngIf="
-            !reviewForm.get('score')?.valid && reviewForm.get('score')?.dirty || submitted
-          "
-        >
-          Necesitas introducir un nombre
+            !reviewForm.get('score')?.valid && 
+            (reviewForm.get('score')?.dirty || submitted)">
+          <p>Need introduce your score</p>
         </div>
       </div>
+
       <div class="comment">
-        <label for="comment">Comentario</label>
-        <input
-          type="text"
-          name="comment"
-          id="comment"
-          formControlName="comment"
-          placeholder="Comentario"
-        />
+        <label for="comment">Comment</label>
+        <textarea ></textarea>
       </div>
+      <button type="submit">Send</button>
+    
+      <!-- <p class="text-error" *ngIf="reviewForm.invalid && submitted">Hay errores en tu formulario</p>  -->
     </form>
   </div>
-  <button type="submit">Enviar</button>
-  <p class="text-error" *ngIf="reviewForm.invalid && submitted">Hay errores en tu formulario</p>
 
 
 </div>

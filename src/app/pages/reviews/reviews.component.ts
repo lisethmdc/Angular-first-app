@@ -1,6 +1,6 @@
-import { Review } from './../../models/review.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Review } from './../../models/review.model';
 
 @Component({
   selector: 'app-reviews',
@@ -9,46 +9,42 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ReviewsComponent implements OnInit {
   public reviewForm: FormGroup;
-  public submitted: boolean;
-
+  public submitted: boolean = false;
+  
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.InitForm()
+    this.initForm()
   }
 
-  InitForm() {
+  initForm() {
     this.reviewForm = this.formBuilder.group({
-      name: ['', Validators.required, Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]$/)],
-      city: ['', Validators.required, Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]$/)],
-      title: ['', [Validators.required, Validators.maxLength(31)], Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]$/)],
-      score: ['', [Validators.required, Validators.maxLength(4), Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]$/)]],
-      comment: ['', [Validators.required, Validators.maxLength(365), Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]$/)]]
+      name: ['', Validators.required],
+      city: ['', Validators.required],
+      title: ['', Validators.required],
+      score: ['', Validators.required],
+      comment: ['', Validators.required, Validators.maxLength(300)]
     })
   
 
-  this.submitted =false  
+  this.submitted = false  
   }
 
   onSubmit() {
     this.submitted = true;
     if (this.reviewForm.valid) {
-      const review: Review= {
+      const review: Review = {
         name: this.reviewForm.get('name')?.value,
         city: this.reviewForm.get('city')?.value,
         title: this.reviewForm.get('title')?.value,
-        score: this.reviewForm.get('title')?.value,
-        comment: this.reviewForm.get('title')?.value,
-
+        score: this.reviewForm.get('score')?.value,
+        comment: this.reviewForm.get('comment')?.value
       }
-
+      
       console.log(review);
-      console.log('Review registrado');
 
-      this.reviewForm.reset();
-      this.submitted = false;
+    this.reviewForm.reset();
+    this.submitted = false;
     }
-  }
-
-
+  } 
 }
