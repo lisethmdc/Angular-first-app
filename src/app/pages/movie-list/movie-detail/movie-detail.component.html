@@ -1,11 +1,19 @@
-<p>movie-detail works!</p>
-<!-- <ul>
-    <li *ngFor="let item of movieDetail">
-        <p>{{ item.title }}</p>
-        <img [src]="item.movie_banner"/>
-        <p>{{ item.director }}</p>
-        <p>{{ item.description }}</p>
-        <p>{{ item.running_time }}</p>
-    </li>
-</ul>
- -->
+<div class="loading" *ngIf="!movie">
+  <h1>Loading...</h1>
+</div>
+
+<div class="main-container" *ngIf="movie">
+  <h1>{{ movie.title }}</h1>
+  <!-- <p>ID: {{ movie.id }}</p> -->
+  <div class="card-detail shadow-drop-center">
+      <div class="img-container">
+
+          <img [src]="movie.movie_banner"  class="image"/>
+      </div>
+    <p><span>Director: </span> {{ movie.director }}</p>
+    <p><span>Description: </span> {{ movie.description }}</p>
+    <p><span>Duration: </span>{{ movie.running_time }} minutes.</p>
+  </div>
+
+  <a [routerLink]="['..']">Back</a>
+</div>
