@@ -2,6 +2,6 @@ export interface Review {
     name: string;
     city: string;
     title: string;
-    score: string;
+    score: number;
     comment: string;
 }

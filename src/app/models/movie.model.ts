@@ -1,4 +1,5 @@
 export interface MovieInterface  {
+    id: string;
     title: string;
     image: string;
     movie_banner: string;

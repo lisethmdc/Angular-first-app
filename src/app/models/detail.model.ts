@@ -1,5 +1,5 @@
 export interface DetailInterface {
-    url: string;
+    id: string;
     movie_banner: string;
     title: string;
     director: string;
