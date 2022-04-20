@@ -1,18 +1,17 @@
+@import '/src/app/styles/colors';
+
 .container{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    //justify-content: center;
     align-items: center;
-    background-color: #FEFAE0;
+    background-color: $bg-primary;
     justify-content: space-evenly;
 }
 
 img {
     width: 400px;
 }
-
-
 
 .cta {
     position: relative;
@@ -41,7 +40,7 @@ img {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.05em;
-    color: #6B705C;
+    color: $font-primary;
    }
    
    .cta svg {

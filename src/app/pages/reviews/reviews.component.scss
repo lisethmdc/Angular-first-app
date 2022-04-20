@@ -1,65 +1,62 @@
+@import '/src/app/styles/colors';
+
 .container {
-    height: 100vh;
-    padding-top: 20px;
+  height: 100vh;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $bg-pages;
+
+  & h1 {
+    padding: 20px;
+    color: #d4a373;
+  }
+
+  & .form {
+    width: 300px;
+    border: solid #a5a58d 3px;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  & .name,
+  .city,
+  .title,
+  .score,
+  .comment {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #faedcd;
-    font-family: 'Barlow Condensed', sans-serif;
-    
+    justify-content: space-between;
+    padding: 10px;
+  }
 
-    & h2 {
-        padding: 20px;
-        color: #D4A373;
-    }
+  input,
+  select,
+  textarea {
+    margin-left: 5px;
+  }
 
-    & .form {
-        border: solid #A5A58D 3px;
-        border-radius: 5px;
-        padding: 10px;     
-    }
-
-    & .name,
-      .city,
-      .title,
-      .score,
-      .comment {   
-          display: flex;     
-          justify-content: space-between;
-        padding: 10px;
-    }
-
-    input,
-    select, 
-    textarea {
-        margin-left: 5px;
-    }
-
-    & .text-error {
-        color: red;
-    }
-
+  & .text-error {
+    color: red;
+  }
 }
 
 button {
-    border: none;
-    color: #090909;
-    margin-top: 10px;
-    margin-left: 90px;
-    padding: 0.7em 1.7em;
-    font-size: 14px;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    transition: all .3s;
-    box-shadow: 4px 4px 8px #c5c5c5,
-                -4px -4px 8px #ffffff;
-   }
-   
-   button:active {
-    color: #666;
-    box-shadow: inset 4px 4px 12px #c5c5c5,
-                inset -4px -4px 12px #ffffff;
-   }
+  border: none;
+  color: #090909;
+  margin-top: 10px;
+  margin-left: 90px;
+  padding: 0.7em 1.7em;
+  font-size: 14px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow: 4px 4px 8px #c5c5c5, -4px -4px 8px #ffffff;
+}
 
+button:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}

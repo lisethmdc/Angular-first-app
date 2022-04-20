@@ -1,72 +1,75 @@
+@import '/src/app/styles/colors';
+
 .main-container {
-    display: flex;
-    flex-direction: column;    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    color: $font-secondary;
+  }
+
+  .card-detail {
+    //border: 2px solid red;
+    flex-direction: column;
     align-items: center;
+    margin: 20px 60px;
+    padding: 10px;
+    width: 60%;
+    border: solid $bg-primary 3px;
+    border-radius: 3%;
+    background-color: $bg-primary;
 
-    h1 {
-        color: #CB997E;
-    }
-   
-     
-    .card-detail {
-        //border: 2px solid red;
-        flex-direction: column;
-        align-items: center;
-        margin: 20px 60px;
-        padding: 10px;
-        width: 60%;
-        border: solid #fefae0 3px;
-  border-radius: 3%;
-  background-color: #fefae0;
-         
- 
-        .img-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 3%;
-        }
-
-        p {
-            padding: 10px 0px;
-            color: #6b705c;
-
-            & span {
-                font-weight: bold;
-            }
-        }
+    .img-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 3%;
     }
 
-    a {
-        padding: 10px 0px;
-        margin-bottom: 20px;
-        font-size: 20px;
-        text-decoration: none;
+    p {
+      padding: 10px 0px;
+      color: $font-primary;
+
+      & span {
+        font-weight: bold;
+      }
     }
+  }
+
+  a {
+    padding: 3px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border: solid $font-secondary 1px;
+    border-radius: 2px;
+  }
 }
 
 .shadow-drop-center {
-    -webkit-animation: shadow-drop-center 0.4s
-      cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    animation: shadow-drop-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
+  -webkit-animation: shadow-drop-center 0.4s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: shadow-drop-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
 
 @-webkit-keyframes shadow-drop-center {
-    0% {
-      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-    100% {
-      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-      box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-    }
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
-  @keyframes shadow-drop-center {
-    0% {
-      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-    100% {
-      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-      box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-    }
+  100% {
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
   }
+}
+@keyframes shadow-drop-center {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}

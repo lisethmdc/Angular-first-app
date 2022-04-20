@@ -1,25 +1,24 @@
+@import '../../styles/colors';
+
 .navbar {
-    background-color: #A5A58D;
-    width: auto;
-    height: 50px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    
-    & a {
-        text-decoration: none;
-        color: #6B705C;
-    }
+  background-color: $bg-secondary;
+  width: auto;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    & .nav-home,
-    .nav-movies,
-    .nav-reviews {
-        padding: 10px;
-        font-family: 'Barlow Condensed', sans-serif;
-        font-size: 20px;        
-    }
+  & a {
+    text-decoration: none;
+    color: $font-primary;
+    padding: 10px;
+    font-size: 20px;
+    margin-right: 20px;
+  }
+}
 
-    & .nav-reviews{
-        margin-right: 20px;
-    }
+.logo img {
+  margin-left: 20px;
+  width: 45px;
+  height: 45px;
 }
