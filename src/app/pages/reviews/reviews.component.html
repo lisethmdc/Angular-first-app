@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Send a review</h2>
+  <h1>Send a review</h1>
 
   <div class="form">
     <form novalidate (ngSubmit)="onSubmit()" [formGroup]="reviewForm">
@@ -10,7 +10,7 @@
           name="name"
           id="name"
           formControlName="name"
-          placeholder="Nombre"
+          placeholder="Name"
         />
         <div class="text-error"
           *ngIf="
@@ -40,8 +40,7 @@
       <div class="title">
         <label for="title">Title</label>
         <select placeholder="Choose a movie" name="title" id="title" formControlName = "title">
-          <!-- <option disabled hidden selected>Subject line</option> -->
-          <option>Castle in the Sky</option>
+          <option id="name">Castle in the Sky</option>
           <option>Grave of the Fireflies</option>
           <option>My Neighbor Totoro</option>  
           <option>Kiki's Delivery Service</option>
@@ -93,9 +92,9 @@
 
       <div class="comment">
         <label for="comment">Comment</label>
-        <textarea ></textarea>
+        <textarea rows="4" cols="20"></textarea>
       </div>
-      <button type="submit">Send</button>
+      <button type="submit" >Send</button>
     
       <!-- <p class="text-error" *ngIf="reviewForm.invalid && submitted">Hay errores en tu formulario</p>  -->
     </form>
